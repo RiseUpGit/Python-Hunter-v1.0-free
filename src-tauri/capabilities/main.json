@@ -1,0 +1,30 @@
+{
+  "identifier": "main-capability",
+  "description": "Capabilities for Python Hunter main window",
+  "local": true,
+  "windows": ["main"],
+  "permissions": [
+    "core:default",
+    "core:window:default",
+    "core:event:default",
+    "core:path:default",
+    "core:resources:default",
+    "core:menu:default",
+    "core:tray:default",
+    "core:webview:default",
+    "core:image:default",
+    "core:app:allow-version",
+    "core:app:allow-name",
+    "core:app:allow-identifier",
+    "allow-debug-sysinfo",
+    "allow-list-processes",
+    "allow-find-python-processes",
+    "allow-kill-process",
+    "allow-db-add-kill-record",
+    "allow-db-list-kill-records",
+    "allow-db-add-blacklist-entry",
+    "allow-db-list-blacklist",
+    "allow-db-remove-blacklist-entry"
+  ],
+  "platforms": ["windows"]
+}

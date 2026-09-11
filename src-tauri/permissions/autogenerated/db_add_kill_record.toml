@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-db-add-kill-record"
+description = "Enables the db_add_kill_record command without any pre-configured scope."
+commands.allow = ["db_add_kill_record"]
+
+[[permission]]
+identifier = "deny-db-add-kill-record"
+description = "Denies the db_add_kill_record command without any pre-configured scope."
+commands.deny = ["db_add_kill_record"]

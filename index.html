@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Hunter</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div class="app">
+        <header class="top-bar">
+            <div class="brand">Python Hunter</div>
+            <div class="status" id="status">Ready</div>
+        </header>
+
+        <main class="main">
+            <section class="panel">
+                <div class="panel-header">
+                    <h2>Processes</h2>
+                    <div class="actions">
+                        <button id="refreshBtn" class="btn">Refresh</button>
+                        <button id="pythonBtn" class="btn">Python Only</button>
+                    </div>
+                </div>
+                <div class="table-wrap">
+                    <table class="process-table">
+                        <thead>
+                            <tr>
+                                <th>PID</th>
+                                <th>Name</th>
+                                <th>Memory</th>
+                                <th>Command</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="processTable"></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="panel side">
+                <div class="panel-header">
+                    <h2>History</h2>
+                </div>
+                <div class="history" id="history"></div>
+            </section>
+        </main>
+    </div>
+
+    <script type="module" src="/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Hunter</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app">
+        <header class="top-bar">
+            <div class="brand">Python Hunter</div>
+            <div class="top-actions">
+                <button id="killSelectedBtn" class="btn danger" title="Kill selected process">Kill Selected</button>
+                <button id="refreshBtn" class="btn">Refresh</button>
+                <button id="pythonBtn" class="btn">Python Only</button>
+            </div>
+            <div class="status" id="status">Ready</div>
+        </header>
+
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search processes by name, PID, or command line..." class="search-input">
+            <button id="searchBtn" class="btn">Search</button>
+            <button id="clearSearchBtn" class="btn">Clear</button>
+            <span class="search-stats" id="searchStats"></span>
+        </div>
+
+        <main class="main">
+            <div class="table-wrap">
+                <table class="process-table">
+                    <thead>
+                        <tr>
+                            <th>PID</th>
+                            <th>Name</th>
+                            <th>Memory</th>
+                            <th>Command</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="processTable"></tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Tauri v2 shim: ensure window.__TAURI__.invoke exists
+        if (window.__TAURI__ && window.__TAURI__.core && typeof window.__TAURI__.invoke !== 'function') {
+            window.__TAURI__.invoke = (cmd, args) => window.__TAURI__.core.invoke(cmd, args);
+        }
+    </script>
+    <script src="app.js"></script>
+</body>
+</html>

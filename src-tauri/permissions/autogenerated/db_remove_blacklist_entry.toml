@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-db-remove-blacklist-entry"
+description = "Enables the db_remove_blacklist_entry command without any pre-configured scope."
+commands.allow = ["db_remove_blacklist_entry"]
+
+[[permission]]
+identifier = "deny-db-remove-blacklist-entry"
+description = "Denies the db_remove_blacklist_entry command without any pre-configured scope."
+commands.deny = ["db_remove_blacklist_entry"]

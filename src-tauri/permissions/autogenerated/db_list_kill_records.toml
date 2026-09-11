@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-db-list-kill-records"
+description = "Enables the db_list_kill_records command without any pre-configured scope."
+commands.allow = ["db_list_kill_records"]
+
+[[permission]]
+identifier = "deny-db-list-kill-records"
+description = "Denies the db_list_kill_records command without any pre-configured scope."
+commands.deny = ["db_list_kill_records"]

@@ -1,0 +1,270 @@
+:root {
+    --bg: #0b0e14;
+    --panel: #11151c;
+    --border: #1c2230;
+    --text: #e6e6e6;
+    --muted: #7a8594;
+    --accent: #00b4d8;
+    --accent-hover: #0096b7;
+    --danger: #ff4757;
+    --danger-hover: #cc3344;
+    --success: #2ed573;
+    --warn: #ffa502;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+    font-size: 12px;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.app {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Top bar */
+.top-bar {
+    height: 48px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    background: var(--panel);
+    flex-shrink: 0;
+}
+
+.brand {
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: var(--accent);
+    text-transform: uppercase;
+}
+
+.top-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.status {
+    font-size: 11px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.status.error { color: var(--danger); }
+.status.working { color: var(--warn); }
+.status.ready { color: var(--success); }
+
+/* Search bar */
+.search-bar {
+    height: 40px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+    gap: 8px;
+    background: var(--panel);
+    flex-shrink: 0;
+}
+
+.search-input {
+    flex: 1;
+    background: var(--bg);
+    color: var(--text);
+    border: 1px solid var(--border);
+    padding: 6px 10px;
+    font-size: 12px;
+    border-radius: 3px;
+    outline: none;
+}
+
+.search-input:focus {
+    border-color: var(--accent);
+}
+
+.search-stats {
+    color: var(--muted);
+    font-size: 11px;
+}
+
+/* Main content */
+.main {
+    flex: 1;
+    overflow: auto;
+    padding: 8px;
+}
+
+/* Table */
+.table-wrap {
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.process-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+}
+
+.process-table th,
+.process-table td {
+    text-align: left;
+    padding: 6px 10px;
+    border-bottom: 1px solid var(--border);
+    white-space: nowrap;
+}
+
+.process-table th {
+    background: var(--panel);
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 10px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.process-table tr:hover td {
+    background: #141820;
+}
+
+.process-table tr.selected td {
+    background: #1a2a3a;
+}
+
+.process-table .pid {
+    color: var(--accent);
+    font-weight: 500;
+}
+
+.process-table .memory {
+    color: var(--warn);
+    font-variant-numeric: tabular-nums;
+}
+
+.process-table .command {
+    color: var(--muted);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 400px;
+}
+
+/* Buttons */
+.btn {
+    background: var(--panel);
+    color: var(--text);
+    border: 1px solid var(--border);
+    padding: 5px 12px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: all 0.15s ease;
+}
+
+.btn:hover {
+    background: #1a1f2a;
+    border-color: var(--accent);
+}
+
+.btn.accent {
+    background: var(--accent);
+    color: var(--bg);
+    border-color: var(--accent);
+    font-weight: 600;
+}
+
+.btn.accent:hover {
+    background: var(--accent-hover);
+}
+
+.btn.danger {
+    background: transparent;
+    color: var(--danger);
+    border-color: var(--danger);
+}
+
+.btn.danger:hover {
+    background: var(--danger);
+    color: #fff;
+}
+
+.btn.danger:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.btn.small {
+    padding: 3px 8px;
+    font-size: 10px;
+}
+
+/* Kill button in table */
+.kill-btn {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    padding: 2px 8px;
+    font-size: 10px;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: all 0.15s ease;
+}
+
+.kill-btn:hover {
+    border-color: var(--danger);
+    color: var(--danger);
+    background: rgba(255, 71, 87, 0.1);
+}
+
+/* Checkbox */
+.process-table input[type="checkbox"] {
+    cursor: pointer;
+}
+
+/* Empty state */
+.empty-state {
+    text-align: center;
+    padding: 40px;
+    color: var(--muted);
+}
+
+.empty-state .icon {
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent);
+}

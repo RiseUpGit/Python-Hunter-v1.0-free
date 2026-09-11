@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-find-python-processes"
+description = "Enables the find_python_processes command without any pre-configured scope."
+commands.allow = ["find_python_processes"]
+
+[[permission]]
+identifier = "deny-find-python-processes"
+description = "Denies the find_python_processes command without any pre-configured scope."
+commands.deny = ["find_python_processes"]

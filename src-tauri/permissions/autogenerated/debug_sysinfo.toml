@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-debug-sysinfo"
+description = "Enables the debug_sysinfo command without any pre-configured scope."
+commands.allow = ["debug_sysinfo"]
+
+[[permission]]
+identifier = "deny-debug-sysinfo"
+description = "Denies the debug_sysinfo command without any pre-configured scope."
+commands.deny = ["debug_sysinfo"]

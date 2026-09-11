@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-db-add-blacklist-entry"
+description = "Enables the db_add_blacklist_entry command without any pre-configured scope."
+commands.allow = ["db_add_blacklist_entry"]
+
+[[permission]]
+identifier = "deny-db-add-blacklist-entry"
+description = "Denies the db_add_blacklist_entry command without any pre-configured scope."
+commands.deny = ["db_add_blacklist_entry"]
