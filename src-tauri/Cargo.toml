@@ -1,6 +1,6 @@
 [package]
 name = "python-hunter"
-version = "1.0.0"
+version = "2.0.0"
 description = "Windows process scanner with Python focus"
 authors = ["you"]
 license = ""
@@ -25,3 +25,4 @@ tauri = { version = "2.11.3", features = [] }
 tauri-plugin-log = "2"
 sysinfo = "0.30"
 rusqlite = { version = "0.30", features = ["bundled"] }
+ureq = { version = "2.10", features = ["json"] }

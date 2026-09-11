@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-auto-kill-blacklisted"
+description = "Enables the auto_kill_blacklisted command without any pre-configured scope."
+commands.allow = ["auto_kill_blacklisted"]
+
+[[permission]]
+identifier = "deny-auto-kill-blacklisted"
+description = "Denies the auto_kill_blacklisted command without any pre-configured scope."
+commands.deny = ["auto_kill_blacklisted"]

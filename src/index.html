@@ -3,48 +3,152 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Python Hunter</title>
+    <title>Python Hunter v2.0</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="app">
+        <!-- Top bar -->
         <header class="top-bar">
-            <div class="brand">Python Hunter</div>
+            <div class="brand"><img src="icons/icon.png" alt="" class="brand-icon"> Python Hunter <span class="version">v2.0</span></div>
             <div class="top-actions">
-                <button id="killSelectedBtn" class="btn danger" title="Kill selected process">Kill Selected</button>
+                <select id="autoRefresh" class="select">
+                    <option value="0">Auto: Off</option>
+                    <option value="2">Auto: 2s</option>
+                    <option value="5" selected>Auto: 5s</option>
+                    <option value="10">Auto: 10s</option>
+                    <option value="30">Auto: 30s</option>
+                </select>
                 <button id="refreshBtn" class="btn">Refresh</button>
-                <button id="pythonBtn" class="btn">Python Only</button>
             </div>
             <div class="status" id="status">Ready</div>
         </header>
 
-        <div class="search-bar">
-            <input type="text" id="searchInput" placeholder="Search processes by name, PID, or command line..." class="search-input">
-            <button id="searchBtn" class="btn">Search</button>
-            <button id="clearSearchBtn" class="btn">Clear</button>
-            <span class="search-stats" id="searchStats"></span>
+        <!-- Tabs -->
+        <nav class="tabs">
+            <button class="tab active" data-tab="processes">Processes</button>
+            <button class="tab" data-tab="history">History</button>
+            <button class="tab" data-tab="blacklist">Blacklist</button>
+            <button class="tab" data-tab="rules">Rules</button>
+        </nav>
+
+        <!-- Processes tab -->
+        <div class="tab-content active" id="tab-processes">
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Search by name, PID, or command line..." class="search-input">
+                <button id="searchBtn" class="btn">Search</button>
+                <button id="clearSearchBtn" class="btn">Clear</button>
+                <button id="pythonBtn" class="btn">Python Only</button>
+                <span class="search-stats" id="searchStats"></span>
+            </div>
+            <main class="main">
+                <div class="table-wrap">
+                    <table class="process-table">
+                        <thead>
+                            <tr>
+                                <th>PID</th>
+                                <th>Name</th>
+                                <th>Memory</th>
+                                <th>CPU%</th>
+                                <th>Command</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="processTable"></tbody>
+                    </table>
+                </div>
+            </main>
         </div>
 
-        <main class="main">
-            <div class="table-wrap">
-                <table class="process-table">
-                    <thead>
-                        <tr>
-                            <th>PID</th>
-                            <th>Name</th>
-                            <th>Memory</th>
-                            <th>Command</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody id="processTable"></tbody>
-                </table>
+        <!-- History tab -->
+        <div class="tab-content" id="tab-history">
+            <div class="search-bar">
+                <button id="clearHistoryBtn" class="btn danger">Clear History</button>
+                <button id="exportCsvBtn" class="btn">Export CSV</button>
+                <span class="search-stats" id="historyStats"></span>
             </div>
-        </main>
+            <main class="main">
+                <div class="table-wrap">
+                    <table class="process-table">
+                        <thead>
+                            <tr>
+                                <th>Timestamp</th>
+                                <th>PID</th>
+                                <th>Name</th>
+                                <th>Memory</th>
+                                <th>Method</th>
+                                <th>Result</th>
+                            </tr>
+                        </thead>
+                        <tbody id="historyTable"></tbody>
+                    </table>
+                </div>
+            </main>
+        </div>
+
+        <!-- Blacklist tab -->
+        <div class="tab-content" id="tab-blacklist">
+            <div class="search-bar">
+                <input type="text" id="blacklistName" placeholder="Process name..." class="search-input">
+                <input type="text" id="blacklistReason" placeholder="Reason (optional)" class="search-input">
+                <button id="addBlacklistBtn" class="btn accent">Add</button>
+                <label class="toggle">
+                    <input type="checkbox" id="autoKillToggle">
+                    Auto-kill on refresh
+                </label>
+            </div>
+            <main class="main">
+                <div class="table-wrap">
+                    <table class="process-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Reason</th>
+                                <th>Created</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="blacklistTable"></tbody>
+                    </table>
+                </div>
+            </main>
+        </div>
+
+        <!-- Rules tab -->
+        <div class="tab-content" id="tab-rules">
+            <div class="rules-panel">
+                <div class="rules-section">
+                    <h3>Export Rules</h3>
+                    <p>Download your blacklist and settings as a JSON file.</p>
+                    <button id="exportRulesBtn" class="btn accent">Export JSON</button>
+                </div>
+                <div class="rules-section">
+                    <h3>Import Rules</h3>
+                    <p>Upload a JSON file to import rules.</p>
+                    <input type="file" id="importFile" accept=".json" class="file-input">
+                    <button id="importRulesBtn" class="btn">Import</button>
+                </div>
+                <div class="rules-section">
+                    <h3>Fetch from URL</h3>
+                    <p>Download rules from a remote URL.</p>
+                    <input type="text" id="fetchUrl" placeholder="https://example.com/rules.json" class="search-input">
+                    <button id="fetchRulesBtn" class="btn">Fetch</button>
+                </div>
+            </div>
+        </div>
     </div>
 
+    <!-- Process detail panel -->
+    <div class="detail-panel" id="detailPanel">
+        <div class="detail-header">
+            <h3>Process Detail</h3>
+            <button id="closeDetailBtn" class="btn small">Close</button>
+        </div>
+        <div class="detail-body" id="detailBody"></div>
+    </div>
+
+    <!-- Tauri shim -->
     <script>
-        // Tauri v2 shim: ensure window.__TAURI__.invoke exists
         if (window.__TAURI__ && window.__TAURI__.core && typeof window.__TAURI__.invoke !== 'function') {
             window.__TAURI__.invoke = (cmd, args) => window.__TAURI__.core.invoke(cmd, args);
         }

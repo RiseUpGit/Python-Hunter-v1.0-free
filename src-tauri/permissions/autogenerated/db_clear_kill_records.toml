@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-db-clear-kill-records"
+description = "Enables the db_clear_kill_records command without any pre-configured scope."
+commands.allow = ["db_clear_kill_records"]
+
+[[permission]]
+identifier = "deny-db-clear-kill-records"
+description = "Denies the db_clear_kill_records command without any pre-configured scope."
+commands.deny = ["db_clear_kill_records"]
