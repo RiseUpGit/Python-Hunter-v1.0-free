@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-process-detail"
+description = "Enables the process_detail command without any pre-configured scope."
+commands.allow = ["process_detail"]
+
+[[permission]]
+identifier = "deny-process-detail"
+description = "Denies the process_detail command without any pre-configured scope."
+commands.deny = ["process_detail"]

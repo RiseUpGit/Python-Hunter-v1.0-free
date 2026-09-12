@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-db-export-kill-records"
+description = "Enables the db_export_kill_records command without any pre-configured scope."
+commands.allow = ["db_export_kill_records"]
+
+[[permission]]
+identifier = "deny-db-export-kill-records"
+description = "Denies the db_export_kill_records command without any pre-configured scope."
+commands.deny = ["db_export_kill_records"]

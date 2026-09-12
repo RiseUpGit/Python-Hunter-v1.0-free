@@ -20,11 +20,24 @@
     "allow-list-processes",
     "allow-find-python-processes",
     "allow-kill-process",
+    "allow-process-detail",
+    "allow-inspect-python",
+    "allow-open-terminal",
+    "allow-open-editor",
     "allow-db-add-kill-record",
     "allow-db-list-kill-records",
+    "allow-db-clear-kill-records",
+    "allow-db-export-kill-records",
     "allow-db-add-blacklist-entry",
     "allow-db-list-blacklist",
-    "allow-db-remove-blacklist-entry"
+    "allow-db-remove-blacklist-entry",
+    "allow-check-blacklist",
+    "allow-auto-kill-blacklisted",
+    "allow-export-rules",
+    "allow-import-rules",
+    "allow-fetch-rules",
+    "allow-setting-set",
+    "allow-setting-get"
   ],
   "platforms": ["windows"]
 }

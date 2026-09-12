@@ -19,6 +19,12 @@ pub struct BlacklistEntry {
     pub reason: Option<String>,
 }
 
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct Setting {
+    pub key: String,
+    pub value: String,
+}
+
 pub struct DbState(pub Mutex<Connection>);
 
 fn init_db(conn: &Connection) -> Result<()> {
@@ -39,6 +45,14 @@ fn init_db(conn: &Connection) -> Result<()> {
             name TEXT PRIMARY KEY NOT NULL,
             reason TEXT,
             created_at TEXT NOT NULL DEFAULT (datetime('now'))
+        )",
+        [],
+    )?;
+    conn.execute(
+        "CREATE TABLE IF NOT EXISTS settings (
+            key TEXT PRIMARY KEY NOT NULL,
+            value TEXT NOT NULL,
+            updated_at TEXT NOT NULL DEFAULT (datetime('now'))
         )",
         [],
     )?;

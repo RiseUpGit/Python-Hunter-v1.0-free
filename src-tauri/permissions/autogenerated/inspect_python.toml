@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-inspect-python"
+description = "Enables the inspect_python command without any pre-configured scope."
+commands.allow = ["inspect_python"]
+
+[[permission]]
+identifier = "deny-inspect-python"
+description = "Denies the inspect_python command without any pre-configured scope."
+commands.deny = ["inspect_python"]
