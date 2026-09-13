@@ -1,10 +1,10 @@
 [package]
 name = "python-hunter"
-version = "2.0.0"
-description = "Windows process scanner with Python focus"
-authors = ["you"]
-license = ""
-repository = ""
+version = "1.0.0"
+description = "Windows process scanner with Python focus — Free tier"
+authors = ["BrownMediaGroup LLC"]
+license = "MIT"
+repository = "https://github.com/RiseUpGit/Python-Hunter-v1.0-free"
 edition = "2021"
 rust-version = "1.77.2"
 
@@ -25,4 +25,3 @@ tauri = { version = "2.11.3", features = [] }
 tauri-plugin-log = "2"
 sysinfo = "0.30"
 rusqlite = { version = "0.30", features = ["bundled"] }
-ureq = { version = "2.10", features = ["json"] }
