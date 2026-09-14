@@ -111,4 +111,9 @@ Python Hunter is part of the **BrownMediaGroup** product family. Brand palette a
 
 **Open-core:** Core functionality is free and open-source. Pro features will be commercially licensed.
 
+## Links
+
+- **Website:** [ppcrepair.com/tools/python-hunter](https://ppcrepair.com/tools/python-hunter)
+- **Pro version:** [ppcrepair.com/tools/python-hunter-pro](https://ppcrepair.com/tools/python-hunter-pro)
+
 © 2026 BrownMediaGroup LLC — all rights reserved.
