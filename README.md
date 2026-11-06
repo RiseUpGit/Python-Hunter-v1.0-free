@@ -28,6 +28,20 @@ Python Hunter is a native Windows desktop app (Tauri v2 + Rust) that scans runni
 
 ---
 
+## 🎯 Upcoming Updates (in development)
+
+**Approved design slate — no dates set yet, built iteratively with our community:**
+
+1. 📈 **Live Memory Spike Alerts** — notification + in-app banner the moment a process jumps past a threshold; catch the RAM hog before it becomes a problem
+2. 📊 **Process Delta Timeline** — per-process memory sparklines (last 5m/15m/1h) + "by growth" sorting to spot leaks and runaway processes at a glance
+3. 🔍 **Python Deep-Peek Panel** — expanded inspection: script path, venv, Python version, safety classification ("runs from venv ✅", "system Python ⚠️"), open-in-editor/terminal
+4. ⚡ **One-Click Kill Presets** — save named batch rules ("kill all venv python", "everything over 300MB") and apply in one click
+5. 🗂️ **Kill Explorer + Reports** — filtered kill history by day/process/method, "RAM reclaimed" stats, PDF report export
+
+*Core stays free and fully featured; Pro adds the deeper inspection, presets, and reporting power.*
+
+---
+
 ## Repo Structure
 
 ```
@@ -65,7 +79,7 @@ python-hunter/
 | **Backend** | Rust (sysinfo, rusqlite, ureq) |
 | **Frontend** | Vanilla JavaScript (no frameworks) |
 | **Packaging** | MSI via WiX toolset |
-| **Theme** | Dark tactical — BrownMediaGroup palette (`#0a0a0a`, `#39FF14`, `#ff3333`) |
+| **Theme** | Dark tactical — BrownMediaGroup palette (`#0a0a0a`, `#39FF14`, `#FF6B00`, `#ff3333`) |
 | **Fonts** | JetBrains Mono / Fira Code (headings), Inter (body) |
 
 ---
@@ -115,5 +129,6 @@ Python Hunter is part of the **BrownMediaGroup** product family. Brand palette a
 
 - **Website:** [ppcrepair.com/tools/python-hunter](https://ppcrepair.com/tools/python-hunter)
 - **Pro version:** [ppcrepair.com/tools/python-hunter-pro](https://ppcrepair.com/tools/python-hunter-pro)
+- **BrownMediaGroup:** [ppcrepair.com](https://ppcrepair.com)
 
 © 2026 BrownMediaGroup LLC — all rights reserved.

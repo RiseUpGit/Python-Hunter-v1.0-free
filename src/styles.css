@@ -70,11 +70,18 @@ body {
 .brand {
     font-weight: 700;
     letter-spacing: 0.05em;
-    color: var(--accent);
-    text-transform: uppercase;
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 5px;
+    text-transform: uppercase;
+}
+
+.brand-py {
+    color: #39FF14; /* BMG lime */
+}
+
+.brand-hu {
+    color: #FF6B00; /* BMG orange */
 }
 
 .brand-icon {
